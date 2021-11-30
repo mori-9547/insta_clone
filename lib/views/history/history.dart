@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Default extends StatelessWidget {
-  const Default({Key? key}) : super(key: key);
+class History extends StatelessWidget {
+  const History({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
