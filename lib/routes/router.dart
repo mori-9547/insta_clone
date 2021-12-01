@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:insta_clone/views/account/profile.dart';
+import 'package:insta_clone/views/history/history.dart';
+import 'package:insta_clone/views/home/home.dart';
 import 'package:insta_clone/views/layouts/auth.dart';
 import 'package:insta_clone/views/layouts/default.dart';
 import 'package:insta_clone/views/post/post.dart';
+import 'package:insta_clone/views/search/search.dart';
 
 const String homeRoute = '/';
 const String loginRoute = '/login';

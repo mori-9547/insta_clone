@@ -1,5 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:insta_clone/model/bottom_navigation_mode.dart';
+import 'package:insta_clone/models/bottom_navigation_mode.dart';
 import 'package:insta_clone/routes/router.dart';
 import 'package:insta_clone/views/account/profile.dart';
 import 'package:insta_clone/views/history/history.dart';
@@ -18,62 +19,30 @@ class Default extends StatelessWidget {
   ];
   final tabItems = [
     const BottomNavigationBarItem(
-      activeIcon: Icon(
-        Icons.home,
-        color: Colors.deepOrange,
-      ),
-      icon: Icon(
-        Icons.home,
-        color: Colors.black,
-      ),
+      activeIcon: Icon(CupertinoIcons.house_alt_fill, color: Colors.black),
+      icon: Icon(CupertinoIcons.house_alt, color: Colors.black),
       label: '',
     ),
     const BottomNavigationBarItem(
-      activeIcon: Icon(
-        Icons.search,
-        color: Colors.deepOrange,
-      ),
-      icon: Icon(
-        Icons.search,
-        color: Colors.black,
-      ),
+      activeIcon: Icon(CupertinoIcons.search_circle_fill, color: Colors.black),
+      icon: Icon(CupertinoIcons.search, color: Colors.black),
       label: '',
     ),
     const BottomNavigationBarItem(
-      // activeIcon: Icon(
-      //   Icons.add,
-      //   color: Colors.deepOrange,
-      // ),
-      icon: Icon(
-        Icons.add_box,
-        color: Colors.black,
-      ),
+      icon: Icon(CupertinoIcons.add_circled, color: Colors.black),
       label: '',
     ),
     const BottomNavigationBarItem(
-      activeIcon: Icon(
-        Icons.notifications,
-        color: Colors.deepOrange,
-      ),
-      icon: Icon(
-        Icons.notifications,
-        color: Colors.black,
-      ),
+      activeIcon: Icon(CupertinoIcons.bell_fill, color: Colors.black),
+      icon: Icon(CupertinoIcons.bell, color: Colors.black),
       label: '',
     ),
     const BottomNavigationBarItem(
-      activeIcon: Icon(
-        Icons.person,
-        color: Colors.deepOrange,
-      ),
-      icon: Icon(
-        Icons.person,
-        color: Colors.black,
-      ),
+      activeIcon: Icon(CupertinoIcons.person_fill, color: Colors.black),
+      icon: Icon(CupertinoIcons.person, color: Colors.black),
       label: '',
     ),
   ];
-
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<BottomNavigationModel>(
@@ -89,7 +58,7 @@ class Default extends StatelessWidget {
               backgroundColor: Colors.white,
               elevation: 0.0,
             ),
-            body: _pageList[model.currentIndex],
+            body: _pageList[model.currentIndex], // define router
             bottomNavigationBar: BottomNavigationBar(
               showSelectedLabels: false,
               showUnselectedLabels: false,
@@ -100,7 +69,7 @@ class Default extends StatelessWidget {
                     ? Navigator.pushNamed(context, postRoute)
                     : model.currentIndex = index;
               },
-              items: tabItems,
+              items: tabItems, // define router
             ),
           );
         },
