@@ -1,8 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:insta_clone/views/account/profile.dart';
+import 'package:insta_clone/views/auth/login.dart';
+import 'package:insta_clone/views/auth/signup.dart';
 import 'package:insta_clone/views/history/history.dart';
 import 'package:insta_clone/views/home/home.dart';
-import 'package:insta_clone/views/layouts/auth.dart';
 import 'package:insta_clone/views/layouts/default.dart';
 import 'package:insta_clone/views/post/post.dart';
 import 'package:insta_clone/views/search/search.dart';
@@ -16,18 +18,18 @@ class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case loginRoute:
-        return MaterialPageRoute(builder: (_) => Auth());
+        return CupertinoPageRoute(builder: (_) => const Login());
       case signupRoute:
-        return MaterialPageRoute(builder: (_) => Auth());
+        return CupertinoPageRoute(builder: (_) => const Signup());
       case homeRoute:
-        return MaterialPageRoute(builder: (_) => Default());
+        return CupertinoPageRoute(builder: (_) => Default());
       case postRoute:
         return MaterialPageRoute(
           builder: (_) => Post(),
           fullscreenDialog: true,
         );
       default:
-        return MaterialPageRoute(builder: (_) => Default());
+        return CupertinoPageRoute(builder: (_) => const Login());
     }
   }
 }

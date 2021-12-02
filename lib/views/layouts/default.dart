@@ -10,6 +10,7 @@ import 'package:insta_clone/views/search/search.dart';
 import 'package:provider/provider.dart';
 
 class Default extends StatelessWidget {
+  Default({Key? key}) : super(key: key);
   final List<Widget> _pageList = <Widget>[
     const Home(),
     const Search(),
